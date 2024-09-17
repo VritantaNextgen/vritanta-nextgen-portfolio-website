@@ -1,2 +1,3 @@
-# vritanta-nextgen-portfolio-website
-This is a Portfolio website 
+# VritantaNextgen Portfolio Website
+
+This is the source code for the VritantaNextgen portfolio website.
