@@ -1,0 +1,14 @@
+{
+    "name": "vritanta-nextgen-portfolio-website",
+    "version": "1.0.0",
+    "description": "VritantaNextgen portfolio website",
+    "scripts": {
+        "build": "gulp build",
+        "serve": "gulp serve"
+    },
+    "dependencies": {
+        "gulp": "^4.0.2",
+        "gulp-sass": "^4.1.0",
+        "gulp-uglify": "^3.0.2"
+    }
+}
