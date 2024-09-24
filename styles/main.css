@@ -1,0 +1,45 @@
+/* styles/main.css */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.landing-page {
+    background-color: #000;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Add flex-direction to center vertically and horizontally */
+}
+
+.landing-page h1 {
+    color: #fff; /* Change text color to white */
+    font-size: 48px;
+    font-weight: bold;
+    animation: fade-in 2s; /* Add animation */
+    margin-bottom: 40px; /* Add space between h1 and button */
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.continue-btn {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 40px; /* Add space above the button */
+}
+
+.continue-btn:hover {
+    background-color: #3e8e41;
+}
