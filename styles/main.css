@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family:'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 .landing-page {
     background-color: #000;
@@ -30,16 +31,3 @@
     }
 }
 
-.continue-btn {
-    background-color: #4CAF50;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 40px; /* Add space above the button */
-}
-
-.continue-btn:hover {
-    background-color: #3e8e41;
-}
