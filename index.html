@@ -7,23 +7,40 @@
     <title>Portfolio Website</title>
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="Buttons/buttons.css">
+    <link rel="stylesheet" href="./styles/navigationbar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 </head>
+
 <body class="body-container">
     <!-- <div class="container"></div> -->
     <div class="landing-page ">
-        <h1>Welcome to Vritanta NetGen Corp.</h1>
-        <!-- <button class="continue-btn">Continue</button> -->
-        <button type="button" class="btn continue-btn">
-            <strong>Explore</strong>
-            <div id="container-stars">
-              <div id="stars"></div>
-            </div>
-          
-            <div id="glow">
-              <div class="circle"></div>
-              <div class="circle"></div>
-            </div>
-        </button>
+        <div style="opacity: 0.9; width: 100vw; height: 100vh;display: flex; justify-content: center; align-items: center; flex-direction: column; background-color: rgba(0, 0, 0, 0.137);">
+            <!-- <div style="display:flex; flex-direction: row; position: absolute; top: 0; right: 0;">
+                <a href="#">About Us</a>
+                <a href="#">Contact Us</a>
+
+            </div> -->
+            <nav>
+                <ul>
+                  <li><a href="#" class="about"><i class="fas fa-users"></i> About Us</a></li>
+                  <li><a href="#" class="projects"><i class="fas fa-briefcase"></i> Projects</a></li>
+                  <li><a href="#" class="contact"><i class="fas fa-envelope"></i> Contact Us</a></li>
+                </ul>
+            </nav>
+            <h1>Welcome to Vritanta NetGen Corp.</h1>
+            <!-- <button class="continue-btn">Continue</button> -->
+            <button type="button" class="btn continue-btn">
+                <strong>Explore</strong>
+                <div id="container-stars">
+                    <div id="stars"></div>
+                </div>
+                
+                <div id="glow">
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                </div>
+            </button>
+        </div>
     </div>
     <script src="scripts/main.js"></script>
 </body>
