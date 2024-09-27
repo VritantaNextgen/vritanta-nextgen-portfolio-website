@@ -1,5 +1,5 @@
 // scripts/main.js
-const continueBtn = document.querySelector('.continue-btn');
+const continueBtn = document.querySelector('.explore-btn');
 
 continueBtn.addEventListener('click', () => {
     // Smooth transition to main page
