@@ -3,110 +3,138 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - Vritanta Next Gen Corp</title>
+    <title>VritantaNextGen Corp</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="styles/aboutus.css">
-    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
 </head>
-<body>
-    <main>
-        <section class="hero d-flex justify-content-center align-items-center" id="section_1">
-            <div class="container">
-                <div class="row">
+<body class="bg-black text-neon-blue">
+    <div class="flex">
+        <aside id="sidebar" class="w-64 h-screen bg-dark-gray fixed left-0 top-0 transition-transform duration-300 ease-in-out transform -translate-x-full md:translate-x-0 z-50">
+            <div class="p-5">
+                <h1 class="text-2xl font-bold mb-10 text-neon-pink">VritantaNextGen</h1>
+                <nav>
+                    <ul>
+                        <li class="mb-4"><a href="#home" class="flex items-center"><i class="fas fa-home mr-3"></i> Home</a></li>
+                        <li class="mb-4"><a href="#about" class="flex items-center"><i class="fas fa-info-circle mr-3"></i> About</a></li>
+                        <li class="mb-4"><a href="#services" class="flex items-center"><i class="fas fa-cogs mr-3"></i> Services</a></li>
+                        <li class="mb-4"><a href="#team" class="flex items-center"><i class="fas fa-users mr-3"></i> Team</a></li>
+                        <li class="mb-4"><a href="#future" class="flex items-center"><i class="fas fa-rocket mr-3"></i> Future</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </aside>
 
-                    <div class="col-lg-7 col-12">
-                        <div class="hero-text">
-                            <div class="hero-title-wrap d-flex align-items-center mb-4">
-                                <img src="aaa.jpeg" class="avatar-image avatar-image-large img-fluid" alt="">
+        <main class="flex-1 md:ml-64">
+            <button id="menuToggle" class="fixed top-5 left-5 z-50 md:hidden bg-neon-blue text-black p-2 rounded-full">
+                <i class="fas fa-bars"></i>
+            </button>
 
-                                <h1 class="hero-title ms-3 mb-0">Hello friend!</h1>
-                            </div>
-
-                            <h2 class="mb-4">I’m available for freelance work.</h2>
-                            <p class="mb-4"><a class="custom-btn btn custom-link" href="#section_2">Let's begin</a></p>
-                        </div>
+            <section id="home" class="h-screen flex items-center justify-center relative overflow-hidden">
+                <div class="text-center z-10 w-full max-w-4xl">
+                    <h1 class="text-5xl font-bold mb-4 animate-pulse">VritantaNextGen Corp</h1>
+                    <p class="text-xl mb-8">Leading Innovation in Custom Project Development</p>
+                    <div class="flex justify-center space-x-4">
+                        <button class="bg-neon-pink text-black px-6 py-3 rounded-full hover:bg-neon-blue transition duration-300">Explore Projects</button>
+                        <button class="bg-neon-blue text-black px-6 py-3 rounded-full hover:bg-neon-pink transition duration-300">Learn More</button>
                     </div>
+                </div>
+                <div id="project-slider" class="absolute inset-0 flex items-center justify-center">/
+                    <!-- Project images will be dynamically inserted here -->
+                </div>
+                <div id="project-tabs" class="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                    <!-- Project tabs will be dynamically inserted here -->
+                </div>
+            </section>
 
-                    <div class="col-lg-5 col-12 position-relative">
-                        <div class="hero-image-wrap"></div>
-                        <img src="images/portrait-happy-excited-man-holding-laptop-computer.png" class="hero-image img-fluid" alt="">
+            <section id="about" class="py-20 px-10 relative">
+                <h2 class="text-3xl font-bold mb-10 glitch" data-text="About Us">About Us</h2>
+                <p class="text-lg leading-relaxed mb-6">VritantaNextGen Corp is at the forefront of custom project development and R&D, delivering innovative solutions that push the boundaries of what's possible.</p>
+                <p class="text-lg leading-relaxed">Our expertise in cutting-edge technologies and commitment to excellence has established us as market leaders in the industry.</p>
+                <div id="about-interactive" class="mt-10 h-64 bg-dark-gray rounded-lg overflow-hidden">
+                    <!-- Interactive about section content will be added here -->
+                </div>
+            </section>
+
+            <section id="services" class="py-20 px-10 bg-dark-gray">
+                <h2 class="text-3xl font-bold mb-10 glitch" data-text="Our Services">Our Services</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                    <div class="service-card">
+                        <i class="fas fa-brain text-4xl mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2">Custom R&D</h3>
+                        <p>Tailored research and development solutions to meet your unique challenges.</p>
+                        <button class="mt-4 bg-neon-blue text-black px-4 py-2 rounded-full hover:bg-neon-pink transition duration-300">Learn More</button>
                     </div>
+                    <div class="service-card">
+                        <i class="fas fa-code text-4xl mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2">Project Development</h3>
+                        <p>End-to-end project development with a focus on innovation and efficiency.</p>
+                        <button class="mt-4 bg-neon-blue text-black px-4 py-2 rounded-full hover:bg-neon-pink transition duration-300">Learn More</button>
+                    </div>
+                    <div class="service-card">
+                        <i class="fas fa-chart-line text-4xl mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2">Tech Consulting</h3>
+                        <p>Expert guidance to help you navigate the rapidly evolving tech landscape.</p>
+                        <button class="mt-4 bg-neon-blue text-black px-4 py-2 rounded-full hover:bg-neon-pink transition duration-300">Learn More</button>
+                    </div>
+                </div>
+            </section>
 
+            <section id="team" class="py-20 px-10 relative">
+                <h2 class="text-3xl font-bold mb-10 glitch" data-text="Our Crew">Our Crew</h2>
+                <div id="team-slider" class="relative h-96 overflow-hidden">
+                    <!-- Team member cards will be dynamically inserted here -->
                 </div>
-            </div>
-        </section>
+                <div id="team-tabs" class="mt-4 flex justify-center space-x-2">
+                    <!-- Team member tabs will be dynamically inserted here -->
+                </div>
+            </section>
 
-        <section id="about" class="about">
-            <h2>About Us</h2>
-            <p>At Vritanta, we specialize in cutting-edge technologies to provide the best and most affordable solutions. Our focus on R&D ensures we stay ahead of the curve.</p>
-        </section>
-
-        <section id="services" class="services">
-            <h2>What We Do</h2>
-            <div class="service-grid">
-                <div class="service-item">
-                    <i class="fas fa-code"></i>
-                    <h3>Web Development</h3>
-                    <p>Custom web solutions tailored to your needs</p>
+            <section id="future" class="py-20 px-10 bg-dark-gray relative">
+                <h2 class="text-3xl font-bold mb-10 glitch" data-text="Future Vision">Future Vision</h2>
+                <p class="text-lg leading-relaxed mb-6">At VritantaNextGen Corp, we're not just adapting to the future; we're creating it. Our roadmap includes:</p>
+                <ul class="list-disc list-inside text-lg leading-relaxed mb-6">
+                    <li>Pioneering AI-driven project management systems</li>
+                    <li>Developing quantum computing applications for complex problem-solving</li>
+                    <li>Creating sustainable and eco-friendly tech solutions</li>
+                </ul>
+                <p class="text-lg leading-relaxed">Join us in shaping the future of technology and innovation.</p>
+                <div id="future-interactive" class="mt-10 h-64 bg-black rounded-lg overflow-hidden">
+                    <!-- 3D interactive background will be added here -->
                 </div>
-                <div class="service-item">
-                    <i class="fas fa-chart-bar"></i>
-                    <h3>BI Solutions</h3>
-                    <p>Data-driven insights for informed decision-making</p>
+            </section>
+            <section id="live-auction" class="py-20 px-10 bg-dark-gray">
+                <h2 class="text-3xl font-bold mb-10 glitch" data-text="Live Auction">Live Auction</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                    <div class="auction-item">
+                        <img src="./Images/Screenshot 2024-09-25 094152.png" alt="Project 1" class="w-full h-48 object-cover mb-4 rounded">
+                        <h3 class="text-xl font-bold mb-2">Innovative AI Solution</h3>
+                        <p class="mb-2">Current Bid: $<span id="bid-project1">10000</span></p>
+                        <p class="mb-4">Time Left: <span id="time-project1">05:00</span></p>
+                        <button class="bg-neon-pink text-black px-4 py-2 rounded-full hover:bg-neon-blue transition duration-300" onclick="placeBid('project1')">Place Bid</button>
+                    </div>
+                    <div class="auction-item">
+                        <img src="./Images/Screenshot 2024-09-25 094152.png" alt="Project 2" class="w-full h-48 object-cover mb-4 rounded">
+                        <h3 class="text-xl font-bold mb-2">Quantum Computing Research</h3>
+                        <p class="mb-2">Current Bid: $<span id="bid-project2">15000</span></p>
+                        <p class="mb-4">Time Left: <span id="time-project2">07:30</span></p>
+                        <button class="bg-neon-pink text-black px-4 py-2 rounded-full hover:bg-neon-blue transition duration-300" onclick="placeBid('project2')">Place Bid</button>
+                    </div>
+                    <div class="auction-item">
+                        <img src="./Images/Screenshot 2024-09-26 115415.png" alt="Project 3" class="w-full h-48 object-cover mb-4 rounded">
+                        <h3 class="text-xl font-bold mb-2">Sustainable Tech Initiative</h3>
+                        <p class="mb-2">Current Bid: $<span id="bid-project3">12000</span></p>
+                        <p class="mb-4">Time Left: <span id="time-project3">03:45</span></p>
+                        <button class="bg-neon-pink text-black px-4 py-2 rounded-full hover:bg-neon-blue transition duration-300" onclick="placeBid('project3')">Place Bid</button>
+                    </div>
                 </div>
-                <div class="service-item">
-                    <i class="fas fa-robot"></i>
-                    <h3>RPA</h3>
-                    <p>Automate repetitive tasks and boost efficiency </p>
-                </div>
-            </div>
-        </section>
-
-        <section id="team" class="team">
-            <h2>Our Team</h2>
-            <div class="team-grid">
-                <div class="team-member">
-                    <img src="am it.jpg" alt="Amit">
-                    <h3>Amit</h3>
-                    <p>BI Expert</p>
-                </div>
-                <div class="team-member">
-                    <img src="bhaskar.jpg" alt="Bhaskar">
-                    <h3>Bhaskar</h3>
-                    <p>RPA Specialist</p>
-                </div>
-            </div>
-            <p>We have many talented members working with us to deliver the best and most affordable products.</p>
-        </section>
-
-        <section id="future" class="future">
-            <h2>Our Future Plans</h2>
-            <p>We're committed to continuous innovation and expanding our service offerings to meet evolving market needs.</p>
-        </section>
-
-        <section id="game" class="game">
-            <h2>Interactive Experience</h2>
-            <div class="container">
-                <h1>Melting Snowman Game</h1>
-                <div class="MeltingSnowman">
-                    <!-- The Melting Snowman graphic will be dynamically generated using JavaScript -->
-                </div>
-                <div class="word">
-                    <!-- The current word will be dynamically generated using JavaScript -->
-                </div>
-                <div class="letters">
-                    <!-- The letters will be dynamically generated using JavaScript -->
-                </div>
-                <div class="message">
-                    <!-- The win/lose message will be dynamically generated using JavaScript -->
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2023 Vritanta Next Gen Corp. All rights reserved.</p>
-    </footer>
-
+            </section>
+        </main>
+    </div>
+    <div id="progress-indicator" class="fixed bottom-5 right-5 w-16 h-16 bg-dark-gray rounded-full flex items-center justify-center">
+        <!-- Progress indicator will be dynamically updated -->
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="scripts/aboutus.js"></script>
 </body>
 </html>
