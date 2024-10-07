@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vritanta NextGen - Modern Tech Solutions</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="home.css">
+    <script>
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark')
+        } else {
+            document.documentElement.classList.remove('dark')
+        }
+    </script>
+</head>
+<body class="bg-gray-100 font-sans dark:bg-gray-900 transition-colors duration-300">
+    <button id="darkModeToggle" class="fixed top-4 right-4 z-50 bg-white dark:bg-gray-800 p-2 rounded-full shadow-md">
+        <i class="fas fa-moon dark:text-white"></i>
+    </button>
+
+    <nav id="sidebar" class="sidebar">
+        <div class="p-10">
+            <h1 class="text-3xl font-bold text-blue-600">Vritanta NextGen</h1>
+        </div>
+        <ul class="space-y-4 font-medium">
+            <li><a href="#home" class="nav-link" data-section="home"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="#services" class="nav-link" data-section="services"><i class="fas fa-cogs"></i> Services</a></li>
+            <li><a href="#our-work" class="nav-link" data-section="our-work"><i class="fas fa-briefcase"></i> Our Work</a></li>
+            <li><a href="#contact" class="nav-link" data-section="contact"><i class="fas fa-envelope"></i> Contact</a></li>
+        </ul>
+    </nav>
+
+    <main class="main-content">
+        <button id="sidebarToggle" class="md:hidden fixed top-4 left-4 z-20 bg-white p-2 rounded-md shadow-md">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        </button>
+
+        <section id="home" class="hero-section mb-16">
+            <div class="hero-content">
+                <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Welcome to Vritanta NextGen</h1>
+                <p class="text-xl md:text-2xl text-white mb-8">Empowering Your Digital Transformation</p>
+                <div class="hero-slider">
+                    <div class="slider-item active" data-service="bi">
+                        <img src="pexels-agk42-2599244.jpg" alt="Business Intelligence">
+                    </div>
+                    <div class="slider-item" data-service="rpa">
+                        <img src="https://source.unsplash.com/300x300?robot,automation" alt="Robotic Process Automation">
+                    </div>
+                    <div class="slider-item" data-service="web">
+                        <img src="https://source.unsplash.com/300x300?web,development" alt="Web Development">
+                    </div>
+                    <div class="slider-item" data-service="marketing">
+                        <img src="https://source.unsplash.com/300x300?digital,marketing" alt="Marketing">
+                    </div>
+                </div>
+                <div class="hero-description">
+                    <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">Business Intelligence</h2>
+                    <p class="text-lg md:text-xl text-white">Transform your data into actionable insights with our advanced BI solutions.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="mb-16 px-4">
+            <h2 class="text-4xl font-bold mb-12 text-center text-blue-600 dark:text-blue-400">Our Services</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="service-card bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
+                    <h3 class="text-2xl font-semibold mb-4 text-sky-800 dark:text-sky-200">Business Intelligence</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">Transform your data into actionable insights with our advanced BI solutions. We provide interactive dashboards, predictive analytics, and data visualization tools to drive informed decision-making.</p>
+                    <a href="#" class="inline-block bg-sky-500 text-white px-4 py-2 rounded-lg hover:bg-sky-600 transition duration-300">Learn More</a>
+                </div>
+                <div class="service-card bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
+                    <h3 class="text-2xl font-semibold mb-4 text-sky-800 dark:text-sky-200">RPA</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">Streamline your operations with our cutting-edge Robotic Process Automation solutions. We automate repetitive tasks, improve efficiency, and reduce errors across your business processes.</p>
+                    <a href="#" class="inline-block bg-sky-500 text-white px-4 py-2 rounded-lg hover:bg-sky-600 transition duration-300">Learn More</a>
+                </div>
+                <div class="service-card bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
+                    <h3 class="text-2xl font-semibold mb-4 text-sky-800 dark:text-sky-200">Web Development</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">Create stunning, responsive websites that engage your audience and drive results. Our expert team delivers custom web solutions, from simple landing pages to complex web applications.</p>
+                    <a href="#" class="inline-block bg-sky-500 text-white px-4 py-2 rounded-lg hover:bg-sky-600 transition duration-300">Learn More</a>
+                </div>
+                <div class="service-card bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
+                    <h3 class="text-2xl font-semibold mb-4 text-sky-800 dark:text-sky-200">Marketing</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">Boost your brand visibility and reach your target audience with our innovative marketing strategies. We offer digital marketing, SEO, social media management, and content creation services.</p>
+                    <a href="#" class="inline-block bg-sky-500 text-white px-4 py-2 rounded-lg hover:bg-sky-600 transition duration-300">Learn More</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="our-work" class="mb-16 px-4">
+            <h2 class="text-4xl font-bold mb-12 text-center text-blue-600 dark:text-blue-400">Our Work</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="work-card" data-service="bi">
+                    <div class="work-card-inner">
+                        <div class="work-card-front bg-sky-100 dark:bg-sky-900">
+                            <h3 class="text-2xl font-semibold mb-4 text-sky-800 dark:text-sky-200">Business Intelligence</h3>
+                            <p class="text-sky-600 dark:text-sky-300">Interactive BI dashboards for data-driven decisions.</p>
+                        </div>
+                        <div class="work-card-back bg-sky-500 dark:bg-sky-700">
+                            <button class="demo-button bg-white text-sky-500 px-4 py-2 rounded-lg hover:bg-sky-100 transition duration-300">View Demo</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="work-card" data-service="rpa">
+                    <div class="work-card-inner">
+                        <div class="work-card-front bg-sky-100 dark:bg-sky-900">
+                            <h3 class="text-2xl font-semibold mb-4 text-sky-800 dark:text-sky-200">RPA</h3>
+                            <p class="text-sky-600 dark:text-sky-300">Automate repetitive tasks with our RPA solutions.</p>
+                        </div>
+                        <div class="work-card-back bg-sky-500 dark:bg-sky-700">
+                            <button class="demo-button bg-white text-sky-500 px-4 py-2 rounded-lg hover:bg-sky-100 transition duration-300">View Demo</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="work-card" data-service="web">
+                    <div class="work-card-inner">
+                        <div class="work-card-front bg-sky-100 dark:bg-sky-900">
+                            <h3 class="text-2xl font-semibold mb-4 text-sky-800 dark:text-sky-200">Web Development</h3>
+                            <p class="text-sky-600 dark:text-sky-300">Create stunning and responsive websites.</p>
+                        </div>
+                        <div class="work-card-back bg-sky-500 dark:bg-sky-700">
+                            <button class="demo-button bg-white text-sky-500 px-4 py-2 rounded-lg hover:bg-sky-100 transition duration-300">View Demo</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="work-card" data-service="marketing">
+                    <div class="work-card-inner">
+                        <div class="work-card-front bg-sky-100 dark:bg-sky-900">
+                            <h3 class="text-2xl font-semibold mb-4 text-sky-800 dark:text-sky-200">Marketing</h3>
+                            <p class="text-sky-600 dark:text-sky-300">Boost your brand with our marketing strategies.</p>
+                        </div>
+                        <div class="work-card-back bg-sky-500 dark:bg-sky-700">
+                            <button class="demo-button bg-white text-sky-500 px-4 py-2 rounded-lg hover:bg-sky-100 transition duration-300">View Demo</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="px-4 py-16 bg-white dark:bg-gray-800">
+            <h2 class="text-4xl font-bold mb-12 text-center text-blue-600 dark:text-blue-400">Get in Touch</h2>
+            <form class="contact-form max-w-lg mx-auto">
+                <div class="mb-4">
+                    <label for="name" class="block text-gray-700 dark:text-gray-300 font-bold mb-2">Name</label>
+                    <input type="text" id="name" name="name" class="w-full px-3 py-2 border rounded-lg dark:bg-gray-700 dark:text-white" required>
+                </div>
+                <div class="mb-4">
+                    <label for="email" class="block text-gray-700 dark:text-gray-300 font-bold mb-2">Email</label>
+                    <input type="email" id="email" name="email" class="w-full px-3 py-2 border rounded-lg dark:bg-gray-700 dark:text-white" required>
+                </div>
+                <div class="mb-4">
+                    <label for="message" class="block text-gray-700 dark:text-gray-300 font-bold mb-2">Message</label>
+                    <textarea id="message" name="message" rows="4" class="w-full px-3 py-2 border rounded-lg dark:bg-gray-700 dark:text-white" required></textarea>
+                </div>
+                <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition duration-300">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <div id="popup-overlay" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50"></div>
+    <div id="popup-content" class="hidden fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white dark:bg-gray-800 rounded-lg shadow-xl z-50 w-11/12 max-w-4xl max-h-[90vh] overflow-auto">
+        <button id="popup-close" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 dark:text-gray-300 dark:hover:text-gray-100">
+            <i class="fas fa-times"></i>
+        </button>
+        <div id="popup-body" class="p-8"></div>
+    </div>
+
+    <script src="home.js"></script>
+</body>
+</html>
