@@ -1,12 +1,18 @@
 /* styles/main.css */
+:root {
+    --neon-blue: #00ffff;
+    --neon-pink: #ff00ff;
+    --dark-gray: #1a1a1a;
+}
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family:'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
+
 .landing-page {
-    background: 
+    /* background: 
 		linear-gradient(180deg, rgba(248, 184, 139,0) 20%, rgba(248, 184, 139,.1) 20%, rgba(248, 184, 139,.1) 40%, rgba(248, 184, 139,.2) 40%, rgba(248, 184, 139,.2) 60%, rgba(248, 184, 139,.4) 60%, rgba(248, 184, 139,.4) 80%, rgba(248, 184, 139,.5) 80%),
     linear-gradient(45deg, rgba(250, 248, 132,.3) 20%, rgba(250, 248, 132,.4) 20%, rgba(250, 248, 132,.4) 40%, rgba(250, 248, 132,.5) 40%, rgba(250, 248, 132,.5) 60%, rgba(250, 248, 132,.6) 60%, rgba(250, 248, 132,.6) 80%, rgba(250, 248, 132,.7) 80%),
     linear-gradient(-45deg, rgba(186, 237, 145,0) 20%, rgba(186, 237, 145,.1) 20%, rgba(186, 237, 145,.1) 40%, rgba(186, 237, 145,.2) 40%, rgba(186, 237, 145,.2) 60%, rgba(186, 237, 145,.4) 60%, rgba(186, 237, 145,.4) 80%, rgba(186, 237, 145,.6) 80%),
@@ -14,7 +20,15 @@
     linear-gradient(-90deg, rgba(242, 162, 232,0) 20%, rgba(242, 162, 232,.4) 20%, rgba(242, 162, 232,.4) 40%, rgba(242, 162, 232,.5) 40%, rgba(242, 162, 232,.5) 60%, rgba(242, 162, 232,.6) 60%, rgba(242, 162, 232,.6) 80%, rgba(242, 162, 232,.8) 80%),
     linear-gradient(180deg, rgba(254, 163, 170,0) 20%, rgba(254, 163, 170,.4) 20%, rgba(254, 163, 170,.4) 40%, rgba(254, 163, 170,.6) 40%, rgba(254, 163, 170,.6) 60%, rgba(254, 163, 170,.8) 60%, rgba(254, 163, 170,.8) 80%, rgba(254, 163, 170,.9) 80%)
 ;
-	background-color: rgb(233, 136, 144);
+	background-color: rgb(233, 136, 144); */
+    background:
+  linear-gradient(180deg, rgba(120, 120, 120, 0) 20%, rgba(140, 140, 140, 0.1) 20%, rgba(140, 140, 140, 0.1) 40%, rgba(160, 160, 160, 0.2) 40%, rgba(160, 160, 160, 0.2) 60%, rgba(180, 180, 180, 0.4) 60%, rgba(180, 180, 180, 0.4) 80%, rgba(200, 200, 200, 0.5) 80%),
+  linear-gradient(45deg, rgba(100, 100, 100, 0.3) 20%, rgba(120, 120, 120, 0.4) 20%, rgba(120, 120, 120, 0.4) 40%, rgba(140, 140, 140, 0.5) 40%, rgba(140, 140, 140, 0.5) 60%, rgba(160, 160, 160, 0.6) 60%, rgba(160, 160, 160, 0.6) 80%, rgba(180, 180, 180, 0.7) 80%),
+  linear-gradient(-45deg, rgba(80, 80, 80, 0) 20%, rgba(100, 100, 100, 0.1) 20%, rgba(100, 100, 100, 0.1) 40%, rgba(120, 120, 120, 0.2) 40%, rgba(120, 120, 120, 0.2) 60%, rgba(140, 140, 140, 0.4) 60%, rgba(140, 140, 140, 0.4) 80%, rgba(160, 160, 160, 0.6) 80%),
+  linear-gradient(90deg, rgba(60, 60, 60, 0) 20%, rgba(80, 80, 80, 0.3) 20%, rgba(80, 80, 80, 0.3) 40%, rgba(100, 100, 100, 0.5) 40%, rgba(100, 100, 100, 0.5) 60%, rgba(120, 120, 120, 0.7) 60%, rgba(120, 120, 120, 0.7) 80%, rgba(140, 140, 140, 0.8) 80%),
+  linear-gradient(-90deg, rgba(40, 40, 40, 0) 20%, rgba(60, 60, 60, 0.4) 20%, rgba(60, 60, 60, 0.4) 40%, rgba(80, 80, 80, 0.5) 40%, rgba(80, 80, 80, 0.5) 60%, rgba(100, 100, 100, 0.6) 60%, rgba(100, 100, 100, 0.6) 80%, rgba(120, 120, 120, 0.8) 80%),
+  linear-gradient(180deg, rgba(20, 20, 20, 0) 20%, rgba(40, 40, 40, 0.4) 20%, rgba(40, 40, 40, 0.4) 40%, rgba(60, 60, 60, 0.6) 40%, rgba(60, 60, 60, 0.6) 60%, rgba(80, 80, 80, 0.8) 60%, rgba(80, 80, 80, 0.8) 80%, rgba(100, 100, 100, 0.9) 80%);
+background-color: rgb(140, 140, 140);
     height: 100vh;
 
     display: flex;
@@ -23,22 +37,72 @@
     flex-direction: column;
 }
 
-
-.landing-page div h1 {
-    color: #000; /* Change text color to white */
-    font-size: 48px;
+#typing-text{
     font-weight: bold;
-    animation: fade-in 2s; /* Add animation */
-    margin-bottom: 2vh;
-    padding: 5px;
+    font-size: 100px;
+    margin-bottom: 5vh;
+    color: #000000;
 }
 
-@keyframes fade-in {
+
+/* Glitch effect */
+.glitch {
+    position: relative;
+}
+ 
+.glitch::before,
+.glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+ 
+.glitch::before {
+    left: 5px;
+    text-shadow: -5px 0 var(--neon-pink);
+    clip: rect(50px, 550px, 190px, 0);
+    animation: glitch-anim-2 2s infinite linear alternate-reverse;
+}
+ 
+.glitch::after {
+    left: -2px;
+    text-shadow: -2px 0 var(--neon-blue);
+    clip: rect(70px, 550px, 140px, 0);
+    animation: glitch-anim 1.5s infinite linear alternate-reverse;
+}
+ 
+@keyframes glitch-anim {
     0% {
-        opacity: 0;
+        clip: rect(47px, 9999px, 78px, 0);
     }
+    5% {
+        clip: rect(84px, 9999px, 66px, 0);
+    }
+    10% {
+        clip: rect(100px, 9999px, 100px, 0);
+    }
+    /* ... add more keyframes as desired ... */
     100% {
-        opacity: 1;
+        clip: rect(85px, 9999px, 59px, 0);
+    }
+}
+ 
+@keyframes glitch-anim-2 {
+    0% {
+        clip: rect(21px, 9999px, 36px, 0);
+    }
+    5% {
+        clip: rect(76px, 9999px, 8px, 0);
+    }
+    10% {
+        clip: rect(100px, 9999px, 100px, 0);
+    }
+    /* ... add more keyframes as desired ... */
+    100% {
+        clip: rect(60px, 9999px, 53px, 0);
     }
 }
 
