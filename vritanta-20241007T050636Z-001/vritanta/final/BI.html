@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BI Dashboard Platform</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
+    <style>
+        :root {
+            --primary-color: #0077be;
+            --secondary-color: #00a86b;
+            --accent-color: #f1c40f;
+            --danger-color: #e74c3c;
+            --bg-color: #f0f2f5;
+            --card-bg: #ffffff;
+            --text-color: #333333;
+            --sidebar-width: 250px;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+        }
+
+        .container {
+            display: flex;
+        }
+
+        .sidebar {
+            width: var(--sidebar-width);
+            height: 100vh;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+        }
+
+        .sidebar h2 {
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .sidebar li {
+            margin-bottom: 10px;
+        }
+
+        .sidebar button {
+            width: 100%;
+            padding: 10px;
+            background-color: transparent;
+            border: none;
+            color: white;
+            text-align: left;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .sidebar button:hover {
+            background-color: rgba(255,255,255,0.1);
+        }
+
+        .sidebar button.active {
+            background-color: rgba(255,255,255,0.2);
+            font-weight: bold;
+        }
+
+        .main-content {
+            flex-grow: 1;
+            padding: 20px;
+            overflow-y: auto;
+            height: 100vh;
+        }
+
+        .header {
+            background-color: var(--card-bg);
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            color: var(--primary-color);
+            margin: 0;
+        }
+
+        .dashboard {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 20px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
+        .card h2 {
+            color: var(--primary-color);
+            margin-top: 0;
+            font-size: 1.2em;
+        }
+
+        .kpi {
+            font-size: 2em;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin: 10px 0;
+        }
+
+        canvas {
+            max-width: 100%;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h2>BI Dashboards</h2>
+            <ul>
+                <li><button class="active" data-dashboard="sales">Sales Overview</button></li>
+                <li><button data-dashboard="marketing">Marketing Insights</button></li>
+                <li><button data-dashboard="operations">Operations Metrics</button></li>
+                <li><button data-dashboard="finance">Financial Summary</button></li>
+            </ul>
+        </div>
+        <div class="main-content">
+            <div class="header">
+                <h1>Business Intelligence Platform</h1>
+            </div>
+            
+            <!-- Sales Dashboard -->
+            <div id="sales-dashboard" class="dashboard">
+                <div class="card">
+                    <h2>Revenue</h2>
+                    <div class="kpi">$1.2M</div>
+                    <canvas id="revenueChart"></canvas>
+                </div>
+                <div class="card">
+                    <h2>Customer Acquisition</h2>
+                    <div class="kpi">+15%</div>
+                    <canvas id="customerChart"></canvas>
+                </div>
+                <div class="card">
+                    <h2>Product Performance</h2>
+                    <canvas id="productChart"></canvas>
+                </div>
+                <div class="card">
+                    <h2>Regional Sales</h2>
+                    <canvas id="regionChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Marketing Dashboard -->
+            <div id="marketing-dashboard" class="dashboard hidden">
+                <div class="card">
+                    <h2>Campaign Performance</h2>
+                    <canvas id="campaignChart"></canvas>
+                </div>
+                <div class="card">
+                    <h2>Lead Conversion Rate</h2>
+                    <div class="kpi">3.8%</div>
+                    <canvas id="conversionChart"></canvas>
+                </div>
+                <div class="card">
+                    <h2>Social Media Engagement</h2>
+                    <canvas id="socialMediaChart"></canvas>
+                </div>
+                <div class="card">
+                    <h2>Email Marketing Metrics</h2>
+                    <canvas id="emailChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Operations Dashboard -->
+            <div id="operations-dashboard" class="dashboard hidden">
+                <div class="card">
+                    <h2>Production Efficiency</h2>
+                    <div class="kpi">87%</div>
+                    <canvas id="productionChart"></canvas>
+                </div>
+                <div class="card">
+                    <h2>Supply Chain Performance</h2>
+                    <canvas id="supplyChainChart"></canvas>
+                </div>
+                <div class="card">
+                    <h2>Quality Control</h2>
+                    <canvas id="qualityChart"></canvas>
+                </div>
+                <div class="card">
+                    <h2>Inventory Turnover</h2>
+                    <div class="kpi">12.5</div>
+                    <canvas id="inventoryChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Finance Dashboard -->
+            <div id="finance-dashboard" class="dashboard hidden">
+                <div class="card">
+                    <h2>Profit Margin</h2>
+                    <div class="kpi">18.5%</div>
+                    <canvas id="profitChart"></canvas>
+                </div>
+                <div class="card">
+                    <h2>Cash Flow</h2>
+                    <canvas id="cashFlowChart"></canvas>
+                </div>
+                <div class="card">
+                    <h2>Expenses Breakdown</h2>
+                    <canvas id="expensesChart"></canvas>
+                </div>
+                <div class="card">
+                    <h2>ROI by Department</h2>
+                    <canvas id="roiChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Dashboard switching functionality
+        document.querySelectorAll('.sidebar button').forEach(button => {
+            button.addEventListener('click', () => {
+                // Hide all dashboards
+                document.querySelectorAll('.dashboard').forEach(dashboard => {
+                    dashboard.classList.add('hidden');
+                });
+                // Show selected dashboard
+                document.getElementById(`${button.dataset.dashboard}-dashboard`).classList.remove('hidden');
+                // Update active button
+                document.querySelectorAll('.sidebar button').forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+            });
+        });
+
+        // Function to create charts
+        function createChart(id, type, labels, data, backgroundColor) {
+            return new Chart(document.getElementById(id), {
+                type: type,
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        data: data,
+                        backgroundColor: backgroundColor || '#0077be',
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            display: type === 'doughnut',
+                            position: 'bottom'
+                        }
+                    }
+                }
+            });
+        }
+
+        // Create charts for Sales Dashboard
+        createChart('revenueChart', 'line', ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'], [650000, 590000, 800000, 810000, 560000, 550000]);
+        createChart('customerChart', 'bar', ['Q1', 'Q2', 'Q3', 'Q4'], [120, 150, 180, 210], '#00a86b');
+        createChart('productChart', 'doughnut', ['Product A', 'Product B', 'Product C', 'Product D'], [300, 200, 150, 100], ['#0077be', '#00a86b', '#f1c40f', '#e74c3c']);
+        createChart('regionChart', 'radar', ['North', 'South', 'East', 'West', 'Central'], [65, 59, 90, 81, 56]);
+
+        // Create charts for Marketing Dashboard
+        createChart('campaignChart', 'bar', ['Campaign A', 'Campaign B', 'Campaign C', 'Campaign D'], [1200, 1900, 3000, 5000], ['#0077be', '#00a86b', '#f1c40f', '#e74c3c']);
+        createChart('conversionChart', 'line', ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'], [3.2, 3.4, 3.6, 3.8, 3.7, 3.8]);
+        createChart('socialMediaChart', 'doughnut', ['Facebook', 'Twitter', 'Instagram', 'LinkedIn'], [3000, 2000, 4000, 1000], ['#3b5998', '#1da1f2', '#e1306c', '#0e76a8']);
+        createChart('emailChart', 'bar', ['Open Rate', 'Click Rate', 'Conversion Rate'], [25, 10, 5], ['#0077be', '#00a86b', '#f1c40f']);
+
+        // Create charts for Operations Dashboard
+        createChart('productionChart', 'line', ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'], [82, 84, 85, 86, 87, 87]);
+        createChart('supplyChainChart', 'bar', ['Supplier A', 'Supplier B', 'Supplier C', 'Supplier D'], [95, 88, 92, 90], ['#0077be', '#00a86b', '#f1c40f', '#e74c3c']);
+        createChart('qualityChart', 'doughnut', ['Excellent', 'Good', 'Average', 'Poor'], [70, 20, 8, 2], ['#0077be', '#00a86b', '#f1c40f', '#e74c3c']);
+        createChart('inventoryChart', 'line', ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'], [11.2, 11.5, 11.8, 12.1, 12.3, 12.5]);
+
+        // Create charts for Finance Dashboard
+        createChart('profitChart', 'line', ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'], [16.5, 17.2, 17.8, 18.1, 18.3, 18.5]);
+        createChart('cashFlowChart', 'bar', ['Q1', 'Q2', 'Q3', 'Q4'], [500000, 750000, 600000, 900000], ['#0077be', '#00a86b', '#f1c40f', '#e74c3c']);
+        createChart('expensesChart', 'doughnut', ['Salaries', 'Marketing', 'Operations', 'R&D', 'Other'], [40, 20, 15, 15, 10], ['#0077be', '#00a86b', '#f1c40f', '#e74c3c', '#8e44ad']);
+        createChart('roiChart', 'bar', ['Sales', 'Marketing', 'Operations', 'R&D'], [22, 18, 15, 12], ['#0077be', '#00a86b', '#f1c40f', '#e74c3c']);
+    </script>
+</body>
+</html>
