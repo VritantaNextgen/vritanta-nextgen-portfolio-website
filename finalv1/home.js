@@ -140,7 +140,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function typeWriter() {
-        const code = `@ Hi Folks...
+        const code = `Hi Folks...
 
 We can help you achieve the best business results using RPA:
 

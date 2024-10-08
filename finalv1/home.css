@@ -52,6 +52,33 @@ body {
     min-height: 100vh;
     transition: all 0.3s ease-in-out;
 }
+/* Light Theme Styles */
+.main-content {
+    background-color: white;
+}
+
+/* Dark Theme Styles */
+html.dark .main-content {
+    background-color: #212121; /* Dark background */
+
+}
+html.dark .work-card-inner {
+    background-color: #ffffff; /* Dark background */
+    box-shadow:  0px 4px 20px rgba(49, 219, 224, 0.5);
+
+}
+html.dark .h2text {
+    color: #ffffff; /* Dark background */
+
+}
+html.dark #contact {
+    background-color: #212121; /* Dark background */
+
+}
+
+html.dark .service-card{
+    box-shadow:  0px 4px 20px rgba(49, 219, 224, 0.5);
+}
 
 @media (min-width: 768px) {
     .main-content {
@@ -123,6 +150,7 @@ body {
 .work-card {
     perspective: 1000px;
     height: 300px;
+    
 }
 
 .work-card-inner {
@@ -132,7 +160,7 @@ body {
     text-align: center;
     transition: transform 0.6s;
     transform-style: preserve-3d;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow:  0 4px 20px rgba(0, 0, 0, 0.1);
     border-radius: 1rem;
 }
 
@@ -190,7 +218,7 @@ body {
 .service-card {
     background-color: white;
     border-radius: 1rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     padding: 2rem;
     transition: transform 0.3s ease-in-out;
 }
@@ -199,6 +227,11 @@ body {
     transform: translateY(-5px);
 }
 
+.contact-form{
+    border-radius: 20px;
+    padding: 50px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Light shadow effect */
+}
 .contact-form input,
 .contact-form textarea {
     width: 100%;
@@ -221,4 +254,87 @@ body {
     background-color: #2563eb;
 }
 
-/* Add any additional styles here */
+/* Learn More Button */
+/* From Uiverse.io by JaydipPrajapati1910 */ 
+.LearnMore {
+    background: transparent;
+    position: relative;
+    padding: 0px 15px;
+    display: flex;
+    align-items: center;
+    font-size: 17px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    border: 1px solid rgb(255,0,0);
+    border-radius: 25px;
+    outline: none;
+    overflow: hidden;
+    color: rgb(255,0,0);
+    transition: color 0.3s 0.1s ease-out;
+    text-align: center;
+  }
+  
+  .LearnMore span {
+    margin: 10px;
+  }
+  
+  .LearnMore::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    content: '';
+    border-radius: 50%;
+    display: block;
+    width: 20em;
+    height: 20em;
+    left: -5em;
+    text-align: center;
+    transition: box-shadow 0.5s ease-out;
+    z-index: -1;
+  }
+  
+  .LearnMore:hover {
+    color: #fff;
+    border: 1px solid rgb(255,0,0);
+  }
+  
+  .LearnMore:hover::before {
+    box-shadow: inset 0 0 0 10em rgb(255, 0, 0);
+  }
+
+/* Demo button*/
+.demo-button {
+    width: 9em;
+    height: 3em;
+    border-radius: 30em;
+    font-size: 15px;
+    font-family: inherit;
+    border: none;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    box-shadow: 6px 6px 12px #c5c5c5,
+                -6px -6px 12px #ffffff;
+   }
+   
+   .demo-button::before {
+    content: '';
+    width: 0;
+    height: 3em;
+    border-radius: 30em;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(to right, #0fd850 0%, #f9f047 100%);
+    transition: .5s ease;
+    display: block;
+    z-index: -1;
+   }
+   
+   .demo-button:hover::before {
+    width: 9em;
+   }
