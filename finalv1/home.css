@@ -230,6 +230,7 @@ html.dark .service-card{
 .contact-form{
     border-radius: 20px;
     padding: 50px;
+    background-color: rgb(255, 255, 255);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Light shadow effect */
 }
 .contact-form input,
@@ -338,3 +339,4 @@ html.dark .service-card{
    .demo-button:hover::before {
     width: 9em;
    }
+
