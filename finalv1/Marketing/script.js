@@ -1,44 +1,80 @@
 // script.js
 
-document.addEventListener('DOMContentLoaded', (event) => {
-    // Animate process steps on scroll
-    const processSteps = document.querySelectorAll('.process-step');
-    
-    const animateOnScroll = () => {
-        processSteps.forEach(step => {
-            const stepTop = step.getBoundingClientRect().top;
-            const stepBottom = step.getBoundingClientRect().bottom;
-            
-            if (stepTop < window.innerHeight && stepBottom > 0) {
-                step.classList.add('animate');
+document.addEventListener('DOMContentLoaded', function() {
+    const carouselItems = document.querySelectorAll('.carousel-item');
+    const prevButton = document.querySelector('.carousel-button.prev');
+    const nextButton = document.querySelector('.carousel-button.next');
+    let currentItem = 0;
+    let intervalId;
+
+    function showItem(index) {
+        carouselItems[currentItem].classList.remove('active');
+        currentItem = (index + carouselItems.length) % carouselItems.length;
+        carouselItems[currentItem].classList.add('active');
+    }
+
+    function showNextItem() {
+        showItem(currentItem + 1);
+    }
+
+    function showPrevItem() {
+        showItem(currentItem - 1);
+    }
+
+    function startCarousel() {
+        intervalId = setInterval(showNextItem, 5000);
+    }
+
+    function stopCarousel() {
+        clearInterval(intervalId);
+    }
+
+    prevButton.addEventListener('click', () => {
+        stopCarousel();
+        showPrevItem();
+        startCarousel();
+    });
+
+    nextButton.addEventListener('click', () => {
+        stopCarousel();
+        showNextItem();
+        startCarousel();
+    });
+
+    // Start the carousel
+    startCarousel();
+
+    // Add animation on scroll
+    const serviceCards = document.querySelectorAll('.service-card');
+    const adServices = document.querySelectorAll('.ad-service');
+
+    function isElementInViewport(el) {
+        const rect = el.getBoundingClientRect();
+        return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
+    }
+
+    function animateOnScroll() {
+        serviceCards.forEach((card, index) => {
+            if (isElementInViewport(card)) {
+                setTimeout(() => {
+                    card.classList.add('animate');
+                }, index * 100);
             }
         });
-    };
 
-    // Initial check for visible elements
-    animateOnScroll();
+        adServices.forEach((service, index) => {
+            if (isElementInViewport(service)) {
+                setTimeout(() => {
+                    service.classList.add('animate');
+                }, index * 100);
+            }
+        });
+    }
 
-    // Check for visible elements on scroll
     window.addEventListener('scroll', animateOnScroll);
-
-    // Interactive hover effect
-    processSteps.forEach(step => {
-        step.addEventListener('mouseover', () => {
-            step.style.transform = 'scale(1.05) translateY(-10px)';
-        });
-
-        step.addEventListener('mouseout', () => {
-            step.style.transform = 'scale(1) translateY(0)';
-        });
-    });
-
-    // Smooth scroll for internal links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
-    });
 });
