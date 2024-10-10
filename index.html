@@ -1,6 +1,7 @@
 <!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,18 +15,19 @@
 <body class="body-container">
     <!-- <div class="container"></div> -->
     <div class="landing-page" id="home">
-        
-            <nav>
-                <ul class="header-icons">
-                  <li><a href="#" class="about"><i class="fas fa-users"></i> About Us</a></li>
-                  <li><a href="#" class="projects"><i class="fas fa-briefcase"></i> Projects</a></li>
-                  <li><a href="#" class="contact"><i class="fas fa-envelope"></i> Contact Us</a></li>
-                </ul>
-            </nav>
-            <p id="typing-text" class="glitch" data-text="Vritanta NextGen Corp."></p>
-            <button class="explore-btn" >
-                Explore
-            </button>
+
+        <nav>
+            <ul class="header-icons">
+                <li><a href="#" class="about"><i class="fas fa-users"></i> About Us</a></li>
+                <li><a href="pages/projects-page.html" class="projects"><i class="fas fa-briefcase"></i> Projects</a>
+                </li>
+                <li><a href="pages/contact-us.html" class="contact"><i class="fas fa-envelope"></i> Contact Us</a></li>
+            </ul>
+        </nav>
+        <p id="typing-text" class="glitch" data-text="Vritanta NextGen Corp."></p>
+        <button class="explore-btn">
+            Explore
+        </button>
 
     </div>
     <script src="scripts/main.js"></script>
@@ -33,7 +35,7 @@
         const heroText = "Vritanta NextGen Corp.";
         const heroElement = document.querySelector('#typing-text');
         let i = 0;
-        
+
         function typeWriter() {
             if (i < heroText.length) {
                 heroElement.innerHTML += heroText.charAt(i);
@@ -41,9 +43,10 @@
                 setTimeout(typeWriter, 60);
             }
         }
-        
+
         typeWriter();
     </script>
 
 </body>
+
 </html>

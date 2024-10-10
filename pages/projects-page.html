@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Projects | Portfolio</title>
+    <link rel="stylesheet" href="../styles/project-page.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <h1 class="logo">My Portfolio</h1>
+        </nav>
+    </header>
+
+    <section class="intro">
+        <div class="intro-text">
+            <h1>Unlocking Efficiency and Insights</h1>
+            <p>Explore my work in RPA automation, interactive Power BI dashboards, and dynamic web development. Let’s
+                make processes smarter, data actionable, and interfaces seamless.</p>
+        </div>
+        <div class="scroll-down">
+            <img src="images/scroll-down.png" alt="Scroll down" />
+        </div>
+    </section>
+
+    <section id="projects" class="projects-section">
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="projects-grid">
+            <!-- Project 1 - Data Analysis (Power BI) -->
+            <div class="project-card" id="powerbi-card">
+                <div class="project-image" style="background-image: url('images/powerbi-dashboard.jpg');"></div>
+                <div class="project-info">
+                    <h3>Interactive Sales Dashboard (Power BI)</h3>
+                    <p>Drive business decisions with an interactive dashboard showcasing real-time sales insights and
+                        KPIs, powered by Power BI.</p>
+                    <button class="view-btn" onclick="openModal()">View Dashboard</button>
+                </div>
+            </div>
+
+            <!-- Project 2 - RPA Automation -->
+            <div class="project-card">
+                <div class="project-image" style="background-image: url('images/rpa-automation.jpg');"></div>
+                <div class="project-info">
+                    <h3>RPA Workflow Automation</h3>
+                    <p>Optimize workflows and eliminate manual tasks using UiPath’s automation solutions, delivering
+                        efficiency and error-free processes.</p>
+                    <a href="#" class="view-btn">View Details</a>
+                </div>
+            </div>
+
+            <!-- Project 3 - Web Development -->
+            <div class="project-card">
+                <div class="project-image" style="background-image: url('images/web-development.jpg');"></div>
+                <div class="project-info">
+                    <h3>Dynamic Web Application</h3>
+                    <p>Building sleek, responsive, and high-performance web applications using the latest web
+                        technologies like HTML, CSS, and JavaScript.</p>
+                    <a href="#" class="view-btn">View Details</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal for Power BI Dashboard -->
+    <div id="dashboard-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h2>Sales Dashboard (Power BI)</h2>
+            <iframe src="https://app.powerbi.com/view?r=eyJrIjoiZG5teWRhdGEifQ" width="100%" height="400px"
+                title="Dummy Sales Dashboard"></iframe>
+            <p>This dashboard provides key insights into sales trends, KPIs, and customer behavior to help businesses
+                make data-driven decisions. It demonstrates my ability to transform raw data into meaningful
+                visualizations, using filters and dynamic reports to uncover actionable insights.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2024 My Portfolio. All Rights Reserved.</p>
+    </footer>
+
+    <script src="../scripts/projects-page.js"></script>
+</body>
+
+</html>
