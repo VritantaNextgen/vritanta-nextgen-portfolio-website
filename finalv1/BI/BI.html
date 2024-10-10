@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vritanta Next Gen Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+</head>
+<body>
+    <div id="loading-screen">
+        <div class="loader"></div>
+    </div>
+    <div class="dashboard-container">
+        <nav class="sidebar">
+            <div class="logo">Vritanta Next Gen</div>
+            <ul>
+                <li class="active"><a href="#bi">BI Projects</a></li>
+                <li><a href="#rpa">RPA</a></li>
+                <li><a href="#marketing">Digital Marketing</a></li>
+                <li><a href="#webdev">Web Development</a></li>
+            </ul>
+        </nav>
+        <main class="content">
+            <section id="bi" class="dashboard active">
+                <h1>BI Project Dashboard</h1>
+                <div class="report-grid">
+                    <div class="report">
+                        <h3>Projects Completed</h3>
+                        <div id="projectsCompleted" class="kpi-value">0</div>
+                    </div>
+                    <div class="report">
+                        <h3>Industry Distribution</h3>
+                        <canvas id="industryChart"></canvas>
+                    </div>
+                    <div class="report">
+                        <h3>Project Timeline</h3>
+                        <canvas id="timelineChart"></canvas>
+                    </div>
+                    <div class="report">
+                        <h3>Client Satisfaction</h3>
+                        <div id="satisfactionMeter" class="meter"></div>
+                    </div>
+                </div>
+            </section>
+            <section id="rpa" class="dashboard">
+                <h1>RPA Dashboard</h1>
+                <div class="report-grid">
+                    <div class="report">
+                        <h3>Processes Automated</h3>
+                        <div id="processesAutomated" class="kpi-value">0</div>
+                    </div>
+                    <div class="report">
+                        <h3>Time Saved</h3>
+                        <canvas id="timeSavedChart"></canvas>
+                    </div>
+                    <div class="report">
+                        <h3>Cost Savings</h3>
+                        <canvas id="costSavingsChart"></canvas>
+                    </div>
+                    <div class="report">
+                        <h3>Bot Status</h3>
+                        <div id="botStatus" class="status-grid"></div>
+                    </div>
+                </div>
+            </section>
+            <section id="marketing" class="dashboard">
+                <h1>Digital Marketing Dashboard</h1>
+                <div class="report-grid">
+                    <div class="report">
+                        <h3>Social Media Engagement</h3>
+                        <canvas id="socialMediaChart"></canvas>
+                    </div>
+                    <div class="report">
+                        <h3>Lead Conversion</h3>
+                        <canvas id="leadConversionChart"></canvas>
+                    </div>
+                    <div class="report">
+                        <h3>Campaign ROI</h3>
+                        <canvas id="campaignROIChart"></canvas>
+                    </div>
+                    <div class="report">
+                        <h3>Trending Keywords</h3>
+                        <div id="keywordCloud" class="word-cloud"></div>
+                    </div>
+                </div>
+            </section>
+            <section id="webdev" class="dashboard">
+                <h1>Web Development Dashboard</h1>
+                <div class="report-grid">
+                    <div class="report">
+                        <h3>Website Performance</h3>
+                        <canvas id="performanceChart"></canvas>
+                    </div>
+                    <div class="report">
+                        <h3>Device Usage</h3>
+                        <canvas id="deviceUsageChart"></canvas>
+                    </div>
+                    <div class="report">
+                        <h3>Page Views</h3>
+                        <canvas id="pageViewsChart"></canvas>
+                    </div>
+                    <div class="report">
+                        <h3>Bounce Rate</h3>
+                        <div id="bounceRateMeter" class="meter"></div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
